@@ -149,12 +149,7 @@ def run_training(dataset_name_or_id: Union[str, int],
                  disable_checkpointing: bool = False,
                  val_with_best: bool = False,
                  device: torch.device = torch.device('cuda')):
-    if plans_identifier == 'nnUNetPlans':
-        print("\n############################\n"
-              "INFO: You are using the old nnU-Net default plans. We have updated our recommendations. "
-              "Please consider using those instead! "
-              "Read more here: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/resenc_presets.md"
-              "\n############################\n")
+
     if isinstance(fold, str):
         if fold != 'all':
             try:
@@ -226,9 +221,9 @@ def run_training_entry():
                         help='Fold of the 5-fold cross-validation. Should be an int between 0 and 4.')
     parser.add_argument('-tr', type=str, required=False, default='nnUNetTrainer',
                         help='[OPTIONAL] Use this flag to specify a custom trainer. Default: nnUNetTrainer')
-    parser.add_argument('-p', type=str, required=False, default='nnUNetPlans',
+    parser.add_argument( '-p', type=str, required=False, default='nnUNetPlans',
                         help='[OPTIONAL] Use this flag to specify a custom plans identifier. Default: nnUNetPlans')
-    parser.add_argument('-pretrained_weights', type=str, required=False, default=None,
+    parser.add_argument('-pretrained_weights', type=str, required=False, default=r"E:\github\nnUNetv2_DATASET\nnUNet_trained_models\Dataset001_BrainTumour\nnUNetTrainer__nnUNetPlans__3d_fullres\fold_0/checkpoint_best.pth",
                         help='[OPTIONAL] path to nnU-Net checkpoint file to be used as pretrained model. Will only '
                              'be used when actually training. Beta. Use with caution.')
     parser.add_argument('-num_gpus', type=int, default=1, required=False,

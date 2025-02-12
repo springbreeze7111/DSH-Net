@@ -84,6 +84,7 @@ if __name__ == '__main__':
 
     generate_dataset_json(out_base,
                           channel_names={0: 'T1', 1: 'T1ce', 2: 'T2', 3: 'Flair'},
+                          # channel_names={0: 'Flair', 1: 'T1', 2: 'T1ce', 3: 'Flair'},
                           labels={
                               'background': 0,
                               'whole tumor': (1, 2, 3),

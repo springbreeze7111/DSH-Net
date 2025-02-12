@@ -37,6 +37,7 @@ def get_network_from_plans(arch_class_name, arch_kwargs, arch_kwargs_req_import,
         **architecture_kwargs
     )
 
+
     if hasattr(network, 'initialize') and allow_init:
         network.apply(network.initialize)
 
