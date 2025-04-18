@@ -57,7 +57,7 @@ where -i is followed by the path to the dataset under your own nnUNet_raw_data/.
 nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 
-**We can modify our desired network configuration (patch_size, batch_size and some network parameters) in nnUNetPlans.json in the generated nnUNet_preprocessed folder**
+**We can change the desired network (change the value of “network_class_name” to the used network) and some parameters (patch_size, batch_size, some network parameters, etc.) in nnUNetPlans.json in the generated nnUNet_preprocessed folder.**
 
 Training models is done with the `nnUNetv2_train` command. The general structure of the command is:
 
